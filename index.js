@@ -1,11 +1,11 @@
-const number = parseFloat(prompt("Enter a number:"));
+const number = prompt("Enter a number:");
 
 if (isNaN(number)) {
     alert("Please enter a valid number");
 } else {
-    const degree = parseInt(prompt("Enter a degree (integer):"));
+    const degree = prompt("Enter a degree (integer):");
 
-    if (isNaN(degree) || !Number.isInteger(degree)) {
+    if (isNaN(degree) || !Number.isInteger(+degree)) {
         alert("Please enter a valid integer degree");
     } else {
         function pow(number, degree) {
@@ -20,7 +20,7 @@ if (isNaN(number)) {
             }
         }
 
-        alert(`${number}^${degree} = ${pow(number, degree)}`);
+        alert(`${number}^${degree} = ${pow(+number, +degree)}`);
     }
 }
 
